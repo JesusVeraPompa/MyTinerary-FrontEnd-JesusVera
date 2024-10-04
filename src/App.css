@@ -4,16 +4,27 @@
 
 /*--------------------------------------- Header NavBarComponents ---------------------------------------*/
 #NavBarComponents {
-  min-height: 5vh;
-  background-color: #2E4D6E;
+    background-color: #2e4d6e;
 }
 /*--------------------------------------- Main BodyComponents -----------------------------------------*/
 #BodyComponents {
-  flex-grow: 1;
-  background-color: #EDD09F;
+    flex-grow: 1;
+    background-color: #edd09f;
 }
 /*--------------------------------------- Footer FooterComponents ---------------------------------------*/
 #FooterComponents {
-  min-height: 5vh;
-  background-color: #423011;
+    min-height: 5vh;
+    background-color: #423011;
+}
+
+.h1 {
+    font-family: 'Pacifico', sans-serif;
+    color: white;
+    font-size:24px
+}
+.white-with-blue-shadow {
+  text-shadow:
+    1px 1px 2px white,
+    0 0 1em white,
+    0 0 0.2em black;
 }
