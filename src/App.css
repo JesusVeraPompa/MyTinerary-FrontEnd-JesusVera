@@ -1,15 +1,15 @@
 /*--------------------------------------- Header NavBarComponents ---------------------------------------*/
 #NavBarComponents {
-  min-height: 15vh;
-  background-color: blueviolet;
+  min-height: 5vh;
+  background-color: #2E4D6E;
 }
 /*--------------------------------------- Main BodyComponents -----------------------------------------*/
 #BodyComponents {
   flex-grow: 1;
-  background-color: aqua;
+  background-color: #EDD09F;
 }
 /*--------------------------------------- Footer FooterComponents ---------------------------------------*/
 #FooterComponents {
   min-height: 5vh;
-  background-color: brown;
+  background-color: #423011;
 }
