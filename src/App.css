@@ -28,3 +28,7 @@
     0 0 1em white,
     0 0 0.2em black;
 }
+
+.parrafo{
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
