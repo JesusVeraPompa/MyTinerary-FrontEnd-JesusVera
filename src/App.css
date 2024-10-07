@@ -2,25 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/*--------------------------------------- Header NavBarComponents ---------------------------------------*/
-#NavBarComponents {
-    background-color: #2e4d6e;
-}
-/*--------------------------------------- Main BodyComponents -----------------------------------------*/
+
 #BodyComponents {
     flex-grow: 1;
-    background-color: #edd09f;
 }
-/*--------------------------------------- Footer FooterComponents ---------------------------------------*/
-#FooterComponents {
-    min-height: 5vh;
-    background-color: #423011;
+th{
+    padding: 5px
+}
+th:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
 }
 
 .h1 {
     font-family: 'Pacifico', sans-serif;
-    color: white;
-    font-size:24px
+    -webkit-box-shadow: 10px 9px 5px -4px rgba(255,255,255,255.75);
+-moz-box-shadow: 10px 9px 5px -4px rgba(255,255,255,255.75);
+box-shadow: 10px 9px 5px -4px rgba(255,255,255,1);
+
 }
 .white-with-blue-shadow {
   text-shadow:
