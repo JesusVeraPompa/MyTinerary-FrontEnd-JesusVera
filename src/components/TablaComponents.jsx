@@ -360,7 +360,7 @@ export default function TablaComponents() {
     return (
         <>
             <div className="flex justify-center items-center p-4 pt-10">
-                <h4 className="text-3xl font-bold text-gray-800 text-center">
+                <h4 className="md:text-[24px] font-bold text-gray-800 text-center">
                     View of the 12 most popular Cities in the World
                 </h4>
             </div>

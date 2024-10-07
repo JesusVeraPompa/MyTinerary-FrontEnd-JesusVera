@@ -59,7 +59,7 @@ export default function MenuComponents() {
                                                 className={classNames(
                                                     item.current
                                                         ? 'bg-gray-900 text-white'
-                                                        : 'text-gray-900 bg-blue-gray-100 hover:bg-gray-700 hover:text-white',
+                                                        : 'bg-gray-900 text-white hover:bg-gray-700 hover:text-white',
                                                     'rounded-md px-3 py-2 text-sm font-medium'
                                                 )}
                                             >
@@ -121,8 +121,8 @@ export default function MenuComponents() {
                                 aria-current={item.current ? 'page' : undefined}
                                 className={classNames(
                                     item.current
-                                        ? 'bg-gray-900 text-white'
-                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        ? 'bg-gray-900 text-white z-40'
+                                        : 'bg-gray-900 text-white z-40 hover:bg-gray-700 hover:text-white',
                                     'block rounded-md px-3 py-2 text-base font-medium'
                                 )}
                             >
