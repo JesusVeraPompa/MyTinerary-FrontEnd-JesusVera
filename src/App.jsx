@@ -1,8 +1,8 @@
 import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/Home'
-import Cities from './pages/Cities'
-import NotFound from './pages/NotFound'
+import Home from '../src/pages/Home'
+import Cities from '../src/pages/Cities'
+import NotFound from '../src/pages/NotFound'
 
 const router = createBrowserRouter([
     { path: '/MyTineraryJesusVera/', element: <Home /> },
