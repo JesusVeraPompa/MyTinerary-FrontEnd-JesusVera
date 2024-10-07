@@ -33,7 +33,7 @@ export default function NavBarComponents() {
                                 <div className="relative flex items-center justify-between ">
                                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                         {/* Mobile menu button*/}
-                                        <DisclosureButton className="group border  relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                        <DisclosureButton className="group border  relative inline-flex items-center justify-center rounded-md p-2 bg-black text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                             <span className="absolute -inset-0.5" />
                                             <span className="sr-only">Open main menu</span>
                                             <Bars3Icon
@@ -305,7 +305,7 @@ export default function NavBarComponents() {
                         <div className="absolute flex justify-center items-center letf-[50%] inset-x-0 top-[48%] md:top-[47%] z-10 ">
                             <div className="w-[400px] flex justify-center items-center">
                                 <h2 className="text-[24px] md:text-[32px] text-center backdrop-blur-xl drop-shadow-xl text-black bg-white px-2">
-                                    "Popular My itineraries"
+                                    "Popular My Itineraries"
                                 </h2>
                             </div>
                         </div>
