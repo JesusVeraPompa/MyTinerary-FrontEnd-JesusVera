@@ -1,14 +1,24 @@
 import '../App'
 import { Typography } from '@material-tailwind/react'
+import { Link } from 'react-router-dom'
 
 const LINKS = [
     {
         title: 'Company',
-        items: ['Home', 'Cities', 'About us'],
+        items: [
+            { name: 'Home', to: '/MyTineraryJesusVera/home' },
+            { name: 'Cities', to: '/MyTineraryJesusVera/cities' },
+            { name: 'About us' },
+        ],
     },
     {
         title: 'Resource',
-        items: ['Blog', 'Newsletter', 'Events', 'Help center'],
+        items: [
+            { name: 'Blog' },
+            { name: 'Newsletter' },
+            { name: 'Events' },
+            { name: 'Help center' },
+        ],
     },
 ]
 
@@ -25,7 +35,12 @@ export default function FooterComponents() {
                                 <h1 className="h1 w-[153px] text-[24px] text-white bg-black drop-shadow-xl px-2 py-1 border rounded-md">
                                     My Tinerary
                                 </h1>
-                                <p className='text-white p-4'>Our travel agency specializes in designing personalized experiences that fit each client's dreams and needs. Our goal is to make travel planning easy, offering expert advice and unique packages to explore the world with confidence.</p>
+                                <p className="text-white p-4">
+                                    Our travel agency specializes in designing personalized
+                                    experiences that fit each client's dreams and needs. Our goal is
+                                    to make travel planning easy, offering expert advice and unique
+                                    packages to explore the world with confidence.
+                                </p>
                             </div>
                         </div>
                         <div className="grid grid-cols-3 justify-between gap-4">
@@ -39,15 +54,17 @@ export default function FooterComponents() {
                                         {title}
                                     </Typography>
                                     {items.map((link) => (
-                                        <li key={link}>
-                                            <Typography
-                                                as="a"
-                                                href="#"
-                                                color="gray"
-                                                className="py-1.5 text-white font-normal transition-colors hover:text-blue-gray-900"
-                                            >
-                                                {link}
-                                            </Typography>
+                                        <li key={link.id}>
+                                            <Link to={link.to} className="link">
+                                                <Typography
+                                                    as="a"
+                                                    href="#"
+                                                    color="gray"
+                                                    className="py-1.5 text-white font-normal transition-colors hover:text-blue-gray-900"
+                                                >
+                                                    {link.name}
+                                                </Typography>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

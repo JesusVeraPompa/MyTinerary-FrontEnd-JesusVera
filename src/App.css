@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-#BodyComponents {
+.Body {
     flex-grow: 1;
 }
 th{
