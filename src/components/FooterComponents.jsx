@@ -17,10 +17,10 @@ const currentYear = new Date().getFullYear()
 export default function FooterComponents() {
     return (
         <>
-            <footer className="relative w-full bg-black pt-5">
+            <footer className="relative w-full bg-black pt-8">
                 <div className="mx-auto w-full max-w-7xl px-8">
                     <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-                        <div variant="h5" className="mb-6">
+                        <div variant="h5" className="mb-6 ">
                             <div className="">
                                 <h1 className="h1 w-[153px] text-[24px] text-white bg-black drop-shadow-xl px-2 py-1 border rounded-md">
                                     My Tinerary

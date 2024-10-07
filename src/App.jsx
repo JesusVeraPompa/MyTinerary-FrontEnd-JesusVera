@@ -1,19 +1,18 @@
-import NavBarComponents from '../src/components/NavBarComponents'
-import BodyComponents from '../src/components/BodyComponents'
-import FooterComponents from '../src/components/FooterComponents'
 import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Home from './pages/Home'
+import Cities from './pages/Cities'
 
+const router = createBrowserRouter([
+    { path: '/', element: <Home /> },
+    { path: '/home', element: <Home /> },
+    { path: '/cities', element: <Cities /> },
+]);
 
-function App() {
+export default function App() {
     return (
         <>
-
-            <NavBarComponents />
-            <BodyComponents />
-            <FooterComponents />
-            
+            <RouterProvider router={router} />
         </>
     )
 }
-
-export default App
