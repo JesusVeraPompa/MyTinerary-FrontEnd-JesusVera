@@ -5,6 +5,7 @@ import Cities from './pages/Cities'
 
 const router = createBrowserRouter([
     { path: '/', element: <Home /> },
+    { path: '/MyTineraryJesusVera', element: <Home /> },
     { path: '/home', element: <Home /> },
     { path: '/cities', element: <Cities /> },
 ]);
