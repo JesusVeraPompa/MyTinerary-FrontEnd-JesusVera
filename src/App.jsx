@@ -7,8 +7,11 @@ import NotFound from '../src/pages/NotFound'
 const router = createBrowserRouter([
     { path: '/MyTineraryJesusVera/', element: <Home /> },
     { path: '/MyTineraryJesusVera/home', element: <Home /> },
+    { path: '/home', element: <Home /> },
     { path: '/MyTineraryJesusVera/cities', element: <Cities /> },
+    { path: '/cities', element: <Cities /> },
     { path: "/MyTineraryJesusVera/*", element: <NotFound></NotFound> },
+    { path: "/*", element: <NotFound></NotFound> },
 ]);
 
 export default function App() {
