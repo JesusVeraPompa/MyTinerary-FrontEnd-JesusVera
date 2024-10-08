@@ -26,8 +26,8 @@ Se realizo lo siguiente:
 
 ### Captura de pantalla
 
-![](./src/assets/image/screenshot/screenshot-desktop.png)
-![](./src/assets/image/screenshot/screenshot-mobile.png)
+![](../src/assets/image/screenshot/screenshot-desktop.png)
+![](../src/assets/image/screenshot/screenshot-mobile.png)
 
 ### Enlaces
 
