@@ -35,14 +35,17 @@ Se realizo lo siguiente:
 -   URL de la solución: [https://github.com/JesusVeraPompa/MyTineraryJesusVera](https://github.com/JesusVeraPompa/MyTineraryJesusVera)
 
 ***NOTA:*** Para visualizar este proyecto de manera Local es necesario ejecutar en la consola lo siguiente:  
-~~~
+
 // Limpiar la memoria caché en NPM (Node Package Manager)
+~~~
 npm cache clear --force
-
+~~~
 // Instalación de paquetes y dependencias 
+~~~
 npm install
-
+~~~
 // Iniciar un servidor de desarrollo
+~~~
 npm run dev -- --host
 ~~~
 
