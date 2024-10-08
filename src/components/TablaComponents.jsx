@@ -361,7 +361,7 @@ export default function TablaComponents() {
         <>
             <div className="flex justify-center items-center p-4 pt-10">
                 <h4 className="md:text-[24px] font-bold text-gray-800 text-center">
-                    View of the 12 most popular Cities in the World
+                    Come in and learn more about the 12 most popular cities in the world
                 </h4>
             </div>
             <div className="relative">
