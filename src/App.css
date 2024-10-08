@@ -2,32 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .Body {
     flex-grow: 1;
 }
-th{
-    padding: 5px
+th {
+    padding: 5px;
 }
-th:hover{
+th:hover {
     background-color: #f2f2f2;
     cursor: pointer;
 }
 
 .h1 {
     font-family: 'Pacifico', sans-serif;
-    -webkit-box-shadow: 10px 9px 5px -4px rgba(255,255,255,255.75);
--moz-box-shadow: 10px 9px 5px -4px rgba(255,255,255,255.75);
-box-shadow: 10px 9px 5px -4px rgba(255,255,255,1);
-
+    -webkit-box-shadow: 10px 9px 5px -4px rgba(255, 255, 255, 255.75);
+    -moz-box-shadow: 10px 9px 5px -4px rgba(255, 255, 255, 255.75);
+    box-shadow: 10px 9px 5px -4px rgba(255, 255, 255, 1);
 }
 .white-with-blue-shadow {
-  text-shadow:
-    1px 1px 2px white,
-    0 0 1em white,
-    0 0 0.2em black;
+    text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em black;
 }
 
-.parrafo{
-    color: white; text-shadow: black 0.1em 0.1em 0.2em
+.parrafo {
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
