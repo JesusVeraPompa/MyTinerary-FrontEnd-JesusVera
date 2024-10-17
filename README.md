@@ -32,7 +32,7 @@ Se realizo lo siguiente:
 ### Enlaces
 
 -   URL del sitio en vivo: [https://jesusverapompa.github.io/MyTineraryJesusVera/](https://jesusverapompa.github.io/MyTineraryJesusVera/)
--   URL de la solución: [https://github.com/JesusVeraPompa/MyTineraryJesusVera](https://github.com/JesusVeraPompa/MyTineraryJesusVera)
+-   URL de la solución: [https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera](https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera)
 
 ***NOTA:*** Para visualizar este proyecto de manera Local es necesario ejecutar en la consola lo siguiente:  
 
