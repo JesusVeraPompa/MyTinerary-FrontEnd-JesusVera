@@ -6,14 +6,14 @@ import City from '../src/pages/City'
 import NotFound from '../src/pages/NotFound'
 
 const router = createBrowserRouter([
-    { path: '/MyTineraryJesusVera/', element: <Home /> },
-    { path: '/MyTineraryJesusVera/home', element: <Home /> },
+    { path: '/MyTinerary-FrontEnd-JesusVera/', element: <Home /> },
+    { path: '/MyTinerary-FrontEnd-JesusVera/home', element: <Home /> },
     { path: '/home', element: <Home /> },
-    { path: '/MyTineraryJesusVera/cities', element: <Cities /> },
+    { path: '/MyTinerary-FrontEnd-JesusVera/cities', element: <Cities /> },
     { path: '/cities', element: <Cities /> },
-    { path: '/MyTineraryJesusVera/cities/city/:id', element: <City /> },
+    { path: '/MyTinerary-FrontEnd-JesusVera/cities/city/:id', element: <City /> },
     { path: '/city/:id', element: <City /> },
-    { path: "/MyTineraryJesusVera/*", element: <NotFound></NotFound> },
+    { path: "/MyTinerary-FrontEnd-JesusVera/*", element: <NotFound></NotFound> },
     { path: "/*", element: <NotFound></NotFound> },
 ]);
 
