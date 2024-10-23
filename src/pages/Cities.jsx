@@ -3,7 +3,7 @@ import MenuComponents from '../components/MenuComponents'
 import FooterComponents from '../components/FooterComponents'
 import TablaComponents from '../components/TablaComponents'
 import SearchComponents from '../components/SearchComponents'
-import LoadingComponents from '../components/LoadingComponents'
+import {CardsComponents} from '../components/CardsComponents'
 
 
 
@@ -14,21 +14,15 @@ export default function Cities() {
             <div className="fixed top-0 z-20 w-full ">
                 <MenuComponents />
             </div>
-            <div className="">
-                <TablaComponents />
+            <div className="p-14">
+
             </div>
             <div className="Body flex flex-col justify-center items-center p-6">
                 <div className="flex">
                     <h1 className="text-[40px]">Cities</h1>
                 </div>
-                <div className="">
-                    <SearchComponents />
-                </div>
                 <div className="flex flex-col lg:flex-row p-6">
-                    <LoadingComponents/>
-                    <LoadingComponents/>
-                    <LoadingComponents/>
-                    <LoadingComponents/>
+                    <CardsComponents/>
                 </div>
             </div>
             <FooterComponents />
