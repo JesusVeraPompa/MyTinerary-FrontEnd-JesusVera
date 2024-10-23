@@ -1,4 +1,4 @@
-# MyTinerary - Jesús Vera Pompa - Full Stack MERN
+# MyTinerary - Jesús Vera Pompa - FrontEnd
 
 Esta es una solución para [Mind Hub](https://mindhubweb.com/). Los desafíos de Mind Hub te ayudan a mejorar tus habilidades de codificación mediante la creación de proyectos realistas.
 
