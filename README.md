@@ -7,7 +7,7 @@ Esta es una solución para [Mind Hub](https://mindhubweb.com/). Los desafíos de
 -   [Descripción general](#descripción-general)
 -   [El desafío](#el-desafío)
 -   [Captura de pantalla](#captura-de-pantalla)
--   [Enlaces](#enlaces)
+<!-- -   [Enlaces](#enlaces) -->
 -   [Mi proceso](#mi-proceso)
 -   [Construido con](#construido-con)
 -   [Lo que aprendí](#lo-que-aprendí)
@@ -29,10 +29,10 @@ Se realizo lo siguiente:
 ![](/src/assets/Image/screenshot/screenshot-desktop.png)
 ![](/src/assets/Image/screenshot/screenshot-mobile.png)
 
-### Enlaces
+<!-- ### Enlaces
 
 -   URL del sitio en vivo: [https://jesusverapompa.github.io/MyTineraryJesusVera/](https://jesusverapompa.github.io/MyTineraryJesusVera/)
--   URL de la solución: [https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera](https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera)
+-   URL de la solución: [https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera](https://github.com/JesusVeraPompa/MyTinerary-FrontEnd-JesusVera) -->
 
 ***NOTA:*** Para visualizar este proyecto de manera Local es necesario ejecutar en la consola lo siguiente:  
 
