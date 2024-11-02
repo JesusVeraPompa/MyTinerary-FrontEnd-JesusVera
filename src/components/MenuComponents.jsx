@@ -11,14 +11,23 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/Image/logo.png'
+
+
+
+
 const navigation = [
     { id: '1', name: 'Home', to: '/MyTineraryJesusVera/home', current: true },
     { id: '2', name: 'Cities', to: '/MyTineraryJesusVera/cities', current: false },
 ]
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
+
 export default function MenuComponents() {
+
+
+
     return (
         <>
             <Disclosure as="nav" className="">

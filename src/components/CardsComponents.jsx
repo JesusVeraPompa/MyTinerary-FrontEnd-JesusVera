@@ -1,38 +1,28 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getCities } from '../store/actions/citiesActions'
 import { useEffect, useState } from 'react'
 
 function CardsComponents() {
-    let [cities, setCities] = useState([])
+    
+
+    
+    const { cities, category, search, loading, error } = useSelector((state) => state.citiesStore)
+    const items = cities
+
+    const filteredItems = items.filter((item) => {
+        const matchesCategory = category === 'All' || item.country === category
+        const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase())
+        return matchesCategory && matchesSearch
+    })
+
+
     const [citiesPerPage, setCitiesPerPage] = useState([6])
     const [currentPage, setCurrentPage] = useState(1)
     const indexOfLastCities = currentPage * citiesPerPage
-    const indexOfFirstCities = indexOfLastCities - citiesPerPage
-    const [loading, setLoading] = useState(true)
-
-    // Hacemnos llamado de la API
-    useEffect(() => {
-        setLoading(true)
-        fetch('http://localhost:8080/api/cities/all')
-            .then((res) => {
-                return res.json()
-            })
-            .then((data) => {
-                // Ordenamos los datos al azar para darle una vista más interesante
-                data.data.sort(function () {
-                    return Math.random() - 0.5
-                })
-                console.log(data.data)
-                setCities(data.data)
-
-                setLoading(false)
-            })
-            .catch((err) => {
-                console.log(err.message)
-            })
-    }, [])
-
-    const totalCities = cities.length
+    const indexOfFirstCities = indexOfLastCities - citiesPerPage 
+    const totalCities = filteredItems.length
 
     return (
         <>
@@ -62,8 +52,8 @@ function CardsComponents() {
                                 </div>
                             </div>
                         </div>
-                    ) : cities.length > 0 ? (
-                        cities
+                    ) : filteredItems.length > 0 ? (
+                        filteredItems
                             .map((city) => (
                                 <Cards
                                     key={city._id}
@@ -76,7 +66,7 @@ function CardsComponents() {
 
                             .slice(indexOfFirstCities, indexOfLastCities)
                     ) : (
-                        <div className="flex flex-wrap gap-6 border-gray-300 pb-[50px]">
+                        <div className="h-[380px] flex flex-wrap gap-6 border-gray-300 pb-[50px]">
                             <div className="text-start">
                                 <h4 className="text-[20px]">No results found...</h4>
                             </div>
@@ -102,10 +92,10 @@ export { CardsComponents }
 function Cards({ id, name, image, country }) {
     return (
         <>
-            <div className="w-[160px] md:w-[250px] max-w-sm rounded overflow-hidden shadow-lg p-2 bg-white">
-                <img className="w-full h-[200px] object-cover" src={image} alt={name} />
+            <div className="w-[150px] md:w-[250px] h-[380px] max-w-sm rounded overflow-hidden shadow-lg p-2 bg-white">
+                <img className="w-full h-[250px] object-cover" src={image} alt={name} />
                 <div className="p-2">
-                    <div className="font-bold text-[26px]">{name}</div>
+                    <div className="font-bold text-[22px]">{name}</div>
                     <div className="">
                         Country: <strong>{country}</strong>
                     </div>

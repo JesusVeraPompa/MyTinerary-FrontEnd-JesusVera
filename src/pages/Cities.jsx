@@ -1,31 +1,28 @@
 import React from 'react'
+import { FilterProvider } from '../context/FilterContext';
 import MenuComponents from '../components/MenuComponents'
-import FooterComponents from '../components/FooterComponents'
-import TablaComponents from '../components/TablaComponents'
-import SearchComponents from '../components/SearchComponents'
-import {CardsComponents} from '../components/CardsComponents'
-
-
-
+import { CardsComponents } from '../components/CardsComponents'
+import  CitiesFilter  from '../components/CitiesFilter'
 
 export default function Cities() {
+
     return (
         <>
             <div className="fixed top-0 z-20 w-full ">
                 <MenuComponents />
             </div>
-            <div className="p-14">
-
-            </div>
-            <div className="Body flex flex-col justify-center items-center p-6">
+            <div className="p-14"></div>
+            <FilterProvider>
+            <main className="Body flex flex-col justify-center items-center">
                 <div className="flex">
                     <h1 className="text-[40px]">Cities</h1>
                 </div>
-                <div className="flex flex-col lg:flex-row p-6">
-                    <CardsComponents/>
+                <CitiesFilter/>
+                <div className="flex flex-col lg:flex-row">
+                    <CardsComponents />
                 </div>
-            </div>
-            <FooterComponents />
+            </main>
+            </FilterProvider>
         </>
     )
 }

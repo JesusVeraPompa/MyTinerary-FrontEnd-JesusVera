@@ -1,21 +1,24 @@
 import '../App'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCities } from '../store/actions/citiesActions'
+import { useEffect, useState } from 'react'
 
-import SliderComponents from '../components/SliderComponents'
 import MenuComponents from '../components/MenuComponents'
 
 export default function NavBarComponents() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getCities())
+    }, [dispatch])
     return (
         <>
-            <div className="relative">
+            <header className="relative">
                 <div>
                     <div className="fixed top-0 z-20 w-full ">
                         <MenuComponents />
                     </div>
-                    <div className="">
-                        <SliderComponents />
-                    </div>
                 </div>
-            </div>
+            </header>
         </>
     )
 }

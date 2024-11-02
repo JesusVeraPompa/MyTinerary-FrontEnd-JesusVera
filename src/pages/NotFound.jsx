@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import MenuComponents from '../components/MenuComponents'
-import FooterComponents from '../components/FooterComponents'
+
 
 export default function NotFound() {
     return (
@@ -27,7 +27,7 @@ export default function NotFound() {
                     </div>
                 </div>
             </main>
-            <FooterComponents />
+
         </>
     )
 }
