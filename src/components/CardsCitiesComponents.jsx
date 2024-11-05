@@ -18,7 +18,7 @@ function CardsCitiesComponents() {
     })
 
 
-    const [citiesPerPage, setCitiesPerPage] = useState([6])
+    const [citiesPerPage, setCitiesPerPage] = useState([12])
     const [currentPage, setCurrentPage] = useState(1)
     const indexOfLastCities = currentPage * citiesPerPage
     const indexOfFirstCities = indexOfLastCities - citiesPerPage 
@@ -70,11 +70,11 @@ export { CardsCitiesComponents }
 function Cards({ id, name, image, country }) {
     return (
         <>
-            <div className="w-[150px] md:w-[250px] h-[380px] max-w-sm rounded overflow-hidden shadow-lg p-2 bg-white">
-                <img className="w-full h-[250px] object-cover" src={image} alt={name} />
+            <div className="w-[150px] md:w-[250px] h-[400px] md:h-[350px] max-w-sm rounded overflow-hidden shadow-lg p-2 bg-white">
+                <img className="w-full h-[200px] object-cover" src={image} alt={name} />
                 <div className="p-2">
-                    <div className="font-bold text-[22px]">{name}</div>
-                    <div className="">
+                    <div className="h-[70px] md:h-[40px] font-bold text-[22px]">{name}</div>
+                    <div className="h-[55px] md:h-[30px]">
                         Country: <strong>{country}</strong>
                     </div>
                     <div className="flex flex-col lg:flex-row justify-between items-center text-center">

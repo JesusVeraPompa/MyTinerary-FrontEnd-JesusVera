@@ -32,25 +32,27 @@ export default function City() {
                     <LoadingComponents />
                 ) : city.length > 0 ? (
                     city.map((item) => (
-
-                        <CardsCityComponents
-                            id={item.id}
-                            name={item.name}
-                            photo={item.photo}
-                            description={item.description}
-                            country={item.country}
-                            flag_country={item.flag_country}
-                            continent={item.continent}
-                            population={item.population}
-                            language={item.language}
-                            currency={item.currency}
-                            img_currency={item.img_currency}
-                            time_zone={item.time_zone}
-                            ensign={item.ensign}
-                            flag_cities={item.flag_cities}
-                            photo2={item.photo2}
-                        />
-
+                        <div className="Body flex flex-col justify-center items-center">
+                            <div className="flex">
+                                <CardsCityComponents
+                                    id={item.id}
+                                    name={item.name}
+                                    photo={item.photo}
+                                    description={item.description}
+                                    country={item.country}
+                                    flag_country={item.flag_country}
+                                    continent={item.continent}
+                                    population={item.population}
+                                    language={item.language}
+                                    currency={item.currency}
+                                    img_currency={item.img_currency}
+                                    time_zone={item.time_zone}
+                                    ensign={item.ensign}
+                                    flag_cities={item.flag_cities}
+                                    photo2={item.photo2}
+                                />
+                            </div>
+                        </div>
                     ))
                 ) : (
                     <div className="flex flex-wrap gap-6 border-gray-300 pb-[50px]">
