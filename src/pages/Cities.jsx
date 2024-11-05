@@ -1,7 +1,7 @@
 import React from 'react'
 import { FilterProvider } from '../context/FilterContext';
 import MenuComponents from '../components/MenuComponents'
-import { CardsComponents } from '../components/CardsComponents'
+import { CardsCitiesComponents } from '../components/CardsCitiesComponents'
 import  CitiesFilter  from '../components/CitiesFilter'
 
 export default function Cities() {
@@ -19,7 +19,7 @@ export default function Cities() {
                 </div>
                 <CitiesFilter/>
                 <div className="flex flex-col lg:flex-row">
-                    <CardsComponents />
+                    <CardsCitiesComponents />
                 </div>
             </main>
             </FilterProvider>

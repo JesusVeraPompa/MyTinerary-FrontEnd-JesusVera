@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { getCities } from '../store/actions/citiesActions'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import LoadingComponents from './LoadingComponents'
 
-function CardsComponents() {
+function CardsCitiesComponents() {
     
 
     
@@ -29,29 +29,7 @@ function CardsComponents() {
             <div className="flex flex-col items-center">
                 <div className="p-2 my-4 flex flex-wrap justify-center gap-4 ">
                     {loading ? (
-                        <div className="w-[300px] h-[380px] border shadow p-4 flex justify-center">
-                            <div className="animate-pulse">
-                                <img
-                                    className="w-[200px]"
-                                    src="https://icones.pro/wp-content/uploads/2021/02/icono-de-camara-gris.png"
-                                    alt=""
-                                />
-                                <div className="p-2 pt-5">
-                                    <div className="h-2 bg-[#B2B5B4] rounded"></div>
-                                </div>
-                                <div className="p-2">
-                                    <div className="h-2 bg-[#B2B5B4] rounded"></div>
-                                </div>
-                                <div className="p-2">
-                                    <div className="h-2 bg-[#B2B5B4] rounded"></div>
-                                </div>
-                                <div className="p-2">
-                                    <p className="text-center text-[18px] text-[#B2B5B4]">
-                                        Loading...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <LoadingComponents />
                     ) : filteredItems.length > 0 ? (
                         filteredItems
                             .map((city) => (
@@ -87,7 +65,7 @@ function CardsComponents() {
     )
 }
 
-export { CardsComponents }
+export { CardsCitiesComponents }
 
 function Cards({ id, name, image, country }) {
     return (

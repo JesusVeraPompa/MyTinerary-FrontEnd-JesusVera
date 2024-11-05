@@ -1,5 +1,6 @@
 import { createAction } from '@reduxjs/toolkit'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import axios from 'axios'
 
 export const setSearch = createAction('SET_SEARCH')

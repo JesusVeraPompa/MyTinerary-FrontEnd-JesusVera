@@ -1,6 +1,7 @@
 import '../App'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCities } from '../store/actions/citiesActions'
+import { getCity } from '../store/actions/cityActions'
 import { useEffect, useState } from 'react'
 
 import MenuComponents from '../components/MenuComponents'
