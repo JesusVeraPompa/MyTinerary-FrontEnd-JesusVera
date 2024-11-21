@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 
 import MenuComponents from '../components/MenuComponents'
 
+
 export default function NavBarComponents() {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -16,7 +17,7 @@ export default function NavBarComponents() {
             <header className="relative">
                 <div>
                     <div className="fixed top-0 z-20 w-full ">
-                        <MenuComponents />
+                        <MenuComponents />                        
                     </div>
                 </div>
             </header>
