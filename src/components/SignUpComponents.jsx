@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Card, Input, Button, Typography } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
-import { Select, Option } from "@material-tailwind/react";
+import { Select, Option } from '@material-tailwind/react'
 import axios from 'axios'
-
 
 export default function SignUpComponents() {
     const [name, setName] = useState('')
@@ -14,7 +13,6 @@ export default function SignUpComponents() {
     const [role, setRole] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    
 
     const [data, setData] = useState('')
 
@@ -29,7 +27,7 @@ export default function SignUpComponents() {
             country: country,
             role: role,
         }
-        console.log(credentials);
+        console.log(credentials)
         try {
             const response = await axios.post(
                 'http://localhost:8080/api/users/register',
@@ -59,9 +57,9 @@ export default function SignUpComponents() {
     }, [])
 
     const loginWithGoogle = () => {
-        window.location.href = "http://localhost:8080/api/auth/signIn/google"
-      }
-
+        window.location.href = 'http://localhost:8080/api/auth/signIn/google'
+    }
+    const [inputValue, setInputValue] = useState('');
     return (
         <Card color="transparent" shadow={false}>
             <Typography variant="h2" color="blue-gray">
@@ -80,6 +78,9 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: John Donald"
                         value={name}
+                        required
+                        pattern="[a-zA-Z ]*"
+                        title="Sólo se acepta caracteres de la a-z o A-Z"
                         onChange={(e) => setName(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -94,6 +95,9 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: Trump Musk"
                         value={surname}
+                        pattern="[a-zA-Z ]*"
+                        title="Sólo se acepta caracteres de la a-z o A-Z"
+                        required
                         onChange={(e) => setSurname(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -108,6 +112,7 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example Link: https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
                         value={photo}
+                        required
                         onChange={(e) => setPhoto(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -117,23 +122,25 @@ export default function SignUpComponents() {
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         Your Country
                     </Typography>
-                    <Select
+                    <Select 
                         label="Select Country"
                         value={country}
                         onChange={(vali) => setCountry(vali)}
-                    >
+                        >
                         {resultfiltroCategory.map((count) => (
                             <Option key={count} value={count}>
                                 {count}
                             </Option>
                         ))}
                     </Select>
+                    
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         Your Role
                     </Typography>
                     <Select
                         label="Select Role"
                         value={role}
+                        required
                         onChange={(val) => setRole(val)}
                     >
                         <Option value="Admin">Admin</Option>
@@ -147,6 +154,7 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: name@mail.com"
                         value={email}
+                        required
                         onChange={(e) => setEmail(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -160,6 +168,7 @@ export default function SignUpComponents() {
                         type="password"
                         size="lg"
                         value={password}
+                        required
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="********"
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -181,9 +190,14 @@ export default function SignUpComponents() {
                         <p className="text-center text-red-600 text-[20px]">{data}</p>
                     ) : (
                         data === null ||
-                        (data.length > 1 && (
+                        (data.length >= 1 && (
                             <p className="text-center text-red-600 text-[15px]">
-                                <strong>{data.length} errors:</strong> {data}
+                                <strong>{data.length} errors:</strong>  
+                                {data.map((count) => (
+                                <p key={count}>{count}</p>    
+                                
+                            
+                        ))}
                             </p>
                         ))
                     )}
@@ -204,7 +218,7 @@ export default function SignUpComponents() {
                     </Link>
                 </Typography>
             </form>
-            <button onClick={() => loginWithGoogle()}  className='py-2'>
+            <button onClick={() => loginWithGoogle()} className="py-2">
                 <div className="flex items-center bg-[#0186F9]">
                     <div className="w-[50px] p-[1px]">
                         <img

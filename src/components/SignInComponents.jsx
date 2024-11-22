@@ -42,6 +42,7 @@ export default function SignInComponents() {
                         size="lg"
                         placeholder="name@mail.com"
                         value={email}
+                        required
                         onChange={(e) => setEmail(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -55,6 +56,7 @@ export default function SignInComponents() {
                         type="password"
                         size="lg"
                         value={password}
+                        required
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="********"
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
