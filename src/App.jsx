@@ -5,12 +5,13 @@ import Home from '../src/pages/Home'
 import Cities from '../src/pages/Cities'
 import City from '../src/pages/City'
 import SignIn from '../src/pages/SignIn'
+import Register from '../src/pages/Register'
 import NotFound from '../src/pages/NotFound'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { setUser } from './store/actions/authActions'
 import SignRoute from './components/SignRoute'
-import { Navigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom'
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
                         <SignIn></SignIn>
                     </SignRoute>
                 ),
+            },
+            {
+                path: '/MyTineraryJesusVera/register',
+                element: <Register />,
             },
             { path: '/MyTineraryJesusVera/*', element: <NotFound></NotFound> },
             { path: '/*', element: <NotFound></NotFound> },

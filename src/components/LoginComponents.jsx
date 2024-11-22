@@ -20,7 +20,7 @@ export default function ProfileMenu() {
 
     const user = useSelector((state) => state.authStore.user)
 
-    console.log(user)
+
     const dispatch = useDispatch()
 
     const isLastItem1 = false

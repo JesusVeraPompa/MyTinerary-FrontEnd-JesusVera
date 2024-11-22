@@ -1,24 +1,62 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { login } from '../store/actions/authActions'
+import { useSelector } from 'react-redux'
 import { Card, Input, Button, Typography } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
+import { Select, Option } from "@material-tailwind/react";
+import axios from 'axios'
 
 
-export default function SignInComponents() {
+export default function SignUpComponents() {
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [photo, setPhoto] = useState('')
+    const [country, setCountry] = useState('')
+    const [role, setRole] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const dispatch = useDispatch()
-    const authStore = useSelector((state) => state.authStore)
-    console.log('Estado del Auth', authStore)
+    
 
-    const handleSubmit = (e) => {
+    const [data, setData] = useState('')
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        dispatch(login({ email, password }))
+        const credentials = {
+            email: email,
+            password: password,
+            name: name,
+            surname: surname,
+            photo: photo,
+            country: country,
+            role: role,
+        }
+        console.log(credentials);
+        try {
+            const response = await axios.post(
+                'http://localhost:8080/api/users/register',
+                credentials
+            )
+            console.log('Se proceso la solicitud')
+            console.log(response)
+            setData(response.data.message)
+            return response
+        } catch (error) {
+            console.log('Error la solicitud')
+            console.log(error)
+            console.log(error.response)
+            console.log(error.response.data.message)
+            setData(error.response.data.message)
+            return error.response
+        }
     }
 
-    const loading = authStore.loading
-    const error = authStore.error
+    const { cities, category, search } = useSelector((state) => state.citiesStore)
+    let filtroCategory = cities.map((events) => events.country)
+    const resultfiltroCategory = filtroCategory.reduce((acc, item) => {
+        if (!acc.includes(item)) {
+            acc.push(item)
+        }
+        return acc
+    }, [])
 
     const loginWithGoogle = () => {
         window.location.href = "http://localhost:8080/api/auth/signIn/google"
@@ -27,20 +65,87 @@ export default function SignInComponents() {
     return (
         <Card color="transparent" shadow={false}>
             <Typography variant="h2" color="blue-gray">
-                Sign In
+                Sign Up
             </Typography>
             <Typography color="gray" className="mt-1 font-normal">
-                Welcome, enter your credentials.
+                Welcome, please enter your details.
             </Typography>
             <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                 <div className="mb-1 flex flex-col gap-6">
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Name
+                    </Typography>
+                    <Input
+                        type="text"
+                        size="lg"
+                        placeholder="Example: John Donald"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        labelProps={{
+                            className: 'before:content-none after:content-none',
+                        }}
+                    />
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Surname
+                    </Typography>
+                    <Input
+                        type="text"
+                        size="lg"
+                        placeholder="Example: Trump Musk"
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        labelProps={{
+                            className: 'before:content-none after:content-none',
+                        }}
+                    />
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Photo
+                    </Typography>
+                    <Input
+                        type="text"
+                        size="lg"
+                        placeholder="Example Link: https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
+                        value={photo}
+                        onChange={(e) => setPhoto(e.target.value)}
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        labelProps={{
+                            className: 'before:content-none after:content-none',
+                        }}
+                    />
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Country
+                    </Typography>
+                    <Select
+                        label="Select Country"
+                        value={country}
+                        onChange={(vali) => setCountry(vali)}
+                    >
+                        {resultfiltroCategory.map((count) => (
+                            <Option key={count} value={count}>
+                                {count}
+                            </Option>
+                        ))}
+                    </Select>
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Role
+                    </Typography>
+                    <Select
+                        label="Select Role"
+                        value={role}
+                        onChange={(val) => setRole(val)}
+                    >
+                        <Option value="Admin">Admin</Option>
+                        <Option value="User">User</Option>
+                    </Select>
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         Your Email
                     </Typography>
                     <Input
                         type="email"
                         size="lg"
-                        placeholder="name@mail.com"
+                        placeholder="Example: name@mail.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -65,11 +170,27 @@ export default function SignInComponents() {
                 </div>
 
                 <Button type="submit" className="mt-6" fullWidth>
-                    sign in
+                    Register
                 </Button>
+                <div className="pt-4">
+                    {data === 'User registered successfully' ? (
+                        <p className="text-center text-green-600 text-[30px]">
+                            {data}, Click Sign In
+                        </p>
+                    ) : data === 'email already exists' ? (
+                        <p className="text-center text-red-600 text-[20px]">{data}</p>
+                    ) : (
+                        data === null ||
+                        (data.length > 1 && (
+                            <p className="text-center text-red-600 text-[15px]">
+                                <strong>{data.length} errors:</strong> {data}
+                            </p>
+                        ))
+                    )}
+                </div>
                 <Typography color="gray" className="mt-4 text-center font-normal">
-                    Don't have an account?{' '}
-                    <Link to={`/MyTineraryJesusVera/register`}>
+                    Already have an account?{' '}
+                    <Link to={`/MyTineraryJesusVera/sign-in`}>
                         <Button className=" text-transform: capitalize" variant="text">
                             <Typography
                                 as="span"
@@ -77,13 +198,11 @@ export default function SignInComponents() {
                                 className="font-normal text-blue-900"
                                 color="inherit"
                             >
-                                <span>Register</span>
+                                <span>Sign In</span>
                             </Typography>
                         </Button>
                     </Link>
                 </Typography>
-                {loading && <p className="text-center text-teal-400">Loading...</p>}
-                {error && <p className="text-center text-red-500">{error}</p>}
             </form>
             <button onClick={() => loginWithGoogle()}  className='py-2'>
                 <div className="flex items-center bg-[#0186F9]">
@@ -94,7 +213,7 @@ export default function SignInComponents() {
                         />
                     </div>
                     <div className=" text-white w-full">
-                        <p className="p-2 text-center">Sign In with Google</p>
+                        <p className="p-2 text-center">Register with Google</p>
                     </div>
                 </div>
             </button>
