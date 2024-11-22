@@ -78,9 +78,6 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: John Donald"
                         value={name}
-                        required
-                        pattern="[a-zA-Z ]*"
-                        title="Sólo se acepta caracteres de la a-z o A-Z"
                         onChange={(e) => setName(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -95,9 +92,6 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: Trump Musk"
                         value={surname}
-                        pattern="[a-zA-Z ]*"
-                        title="Sólo se acepta caracteres de la a-z o A-Z"
-                        required
                         onChange={(e) => setSurname(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -112,7 +106,6 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example Link: https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
                         value={photo}
-                        required
                         onChange={(e) => setPhoto(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -140,7 +133,6 @@ export default function SignUpComponents() {
                     <Select
                         label="Select Role"
                         value={role}
-                        required
                         onChange={(val) => setRole(val)}
                     >
                         <Option value="Admin">Admin</Option>
@@ -154,7 +146,6 @@ export default function SignUpComponents() {
                         size="lg"
                         placeholder="Example: name@mail.com"
                         value={email}
-                        required
                         onChange={(e) => setEmail(e.target.value)}
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
@@ -168,7 +159,6 @@ export default function SignUpComponents() {
                         type="password"
                         size="lg"
                         value={password}
-                        required
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="********"
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
